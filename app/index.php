@@ -2,11 +2,11 @@
 <?php include 'header.php'; ?>
 
 <main>
-    <img class="top__img" src="/img/shadow.png.png" alt="ombre" />
+    <img class="top__img" src="./assets/img/shadow.png.png" alt="ombre" />
 
     <section class="main__content">
-        <img class="main__content-img1 site__img" src="/img/detective window-sm.webp" alt="enqueteur" />
-        <img class="main__content-img1--lg" src="/img/detective window.png" alt="enqueteur" />
+        <img class="main__content-img1 site__img" src="./assets/img/detective window-sm.webp" alt="enqueteur" />
+        <img class="main__content-img1--lg" src="./assets/img/detective window.png" alt="enqueteur" />
         <div class="box-content main__content-txt box__style">
             <h1 class="main__content-ttl">
                 Bienvenue sur <span class="txt__red">Geo</span><span class="txt__blue">Caen</span>
@@ -17,7 +17,7 @@
             </p>
         </div>
         <a class="link" href="game.php"><button class="btn">jouer ici !</button></a>
-        <img class="main__content-img2 site__img" src="/img/femme_window-sm.webp" alt="enqueteur" />
+        <img class="main__content-img2 site__img" src="./assets/img/femme_window-sm.webp" alt="enqueteur" />
         <img class="main__content-img2--lg" src="/img/femme_window.png" alt="enqueteur" />
         <div class="box-content main__content-txt box__style">
             <h3 class="main__content-ttl">
@@ -40,7 +40,7 @@
             <p class="main__content-txt">
                 Plongez vous dans la tapisserie culturelle vibrante de Caen en participant à une variété d'expériences immersives, notamment des spectacles de musique traditionnelle, des ateliers d'artisans et des aventures culinaires mettant en vedette des spécialités locales et des délices gastronomiques.
             </p>
-            <img class="main__content-img3 site__img" src="/img/filette-sm.webp" alt="fillette" />
+            <img class="main__content-img3 site__img" src="./assets/img/filette-sm.webp" alt="fillette" />
         </div>
 
         <a class="link" href="jeux.php"><button class="btn">jouer ici !</button></a>
@@ -51,7 +51,7 @@
         <li><img class="img__itm" src="/img/abbaye.jpg" alt="" /></li>
     </ul>
 
-    <img class="main__content-img4 site__img" src="/img/boy-sm.webp" alt="garçon" />
+    <img class="main__content-img4 site__img" src="./assets/img/boy-sm.webp" alt="garçon" />
 
     <section class="box-content box__style">
         <p>SLIDER TEMOIGNAGE UTILISATEURS</p>
@@ -63,10 +63,10 @@
                 <span class="txt__blue">News</span> du pays
                 <span class="txt__red">Normand</span>
             </h2>
-            <img class="main__content-img9" src="/img/livreur-de-journaux-sm.webp" alt="livreur de journaux" />
+            <img class="main__content-img9" src="./assets/img/livreur-de-journaux-sm.webp" alt="livreur de journaux" />
         </div>
         <div class="box-content box__style">
-            <img class="news-img" src="/img/memorial-britannique-ver-sur-mer.webp" alt="" />
+            <img class="news-img" src="./assets/img/memorial-britannique-ver-sur-mer.webp" alt="" />
             <p>
                 80e <span class="txt__blue">D</span>-<span class="txt__red">Day</span>. La cérémonie binationale franco-britannique se tiendra le 6 juin 2024 à 10 h 30.
             </p>
@@ -77,7 +77,7 @@
         </div>
 
         <div class="box-content box__style">
-            <img class="news-img" src="/img/millenaire caen.webp" alt="" />
+            <img class="news-img" src="./assets/img/millenaire caen.webp" alt="" />
             <p>
                 <span class="txt__blue">Millénaire</span> de <span class="txt__red">caen</span> : Une parade titanesque se prépare dans le plus grand secret.
             </p>
@@ -86,7 +86,7 @@
                 En <span class="txt__blue">2025</span> le Millénaire de <span class="txt__red">Caen</span> se prépare, avec un événement phare la "parade opératique".
             </p>
         </div>
-        <img class="main__content-img5 site__img" src="/img/ombre detective-sm.webp" alt="detective" />
+        <img class="main__content-img5 site__img" src="./assets/img/ombre detective-sm.webp" alt="detective" />
     </section>
 </main>
 

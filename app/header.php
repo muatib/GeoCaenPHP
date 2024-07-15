@@ -15,8 +15,8 @@
 
 <body>
     <header class="header-container">
-        <img class="header__img" src="/img/logovillecaenndie_2016-removebg-preview.webp" alt="enqueteur" />
-        <img class="header__logo site__img" src="/img/Geo-removebg-preview.webp" alt="logo GeoCaen" />
+        <img class="header__img" src="./assets/img/logovillecaenndie_2016-removebg-preview.webp" alt="enqueteur" />
+        <img class="header__logo site__img" src="./assets/img/Geo-removebg-preview.webp" alt="logo GeoCaen" />
         <div class="nav__lg">
             <ul class="nav__lg-lst">
                 <li><a class="nav__lnk" href="index.php">Accueil</a></li>

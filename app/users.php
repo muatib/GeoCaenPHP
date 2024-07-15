@@ -92,12 +92,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header class="header-container">
         <img
           class="header__img"
-          src="/img/logovillecaenndie_2016-removebg-preview.webp"
+          src="./assets/img/logovillecaenndie_2016-removebg-preview.webp"
           alt="enqueteur"
         />
         <img
           class="header__logo site__img"
-          src="/img/Geo-removebg-preview.webp"
+          src="./assets/img/Geo-removebg-preview.webp"
           alt="logo GeoCaen"
         />
         <div class="nav__lg">

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bravo !</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <script type="module" src="http://localhost:5173/js/main.js"></script>
   </head>
   <body>
     <header>
@@ -48,7 +49,7 @@
     >
     </footer>
     <script src="/js/game.js"></script>
-    <script src="/js/main.js"></script>
+    <script  src="/js/main.js"></script>
     <script src="/js/lore.js"></script>
     <script src="/js/burger.js"></script>
   </body>

@@ -1,4 +1,4 @@
-import './../assets/file.scss/main.scss'
+import'./../assets/file.scss/main.scss';
 
 
 

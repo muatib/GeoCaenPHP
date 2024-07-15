@@ -11,12 +11,12 @@
     <header class="header-container">
       <img
         class="header__img"
-        src="/img/logovillecaenndie_2016-removebg-preview.webp"
+        src="./assets/img/logovillecaenndie_2016-removebg-preview.webp"
         alt="enqueteur"
       />
       <img
         class="header__logo main__img"
-        src="/img/Geo-removebg-preview.webp"
+        src="./assets/img/Geo-removebg-preview.webp"
         alt="logo GeoCaen"
       />
 
@@ -48,22 +48,22 @@
         <h3>Les trésors cachés de <br> Guillaume le <span class="txt__gold">Conquérant</span></h3>
         <a href="game-pres.php"><img
           class="game__img1 game__img"
-          src="/img/guillaume-le-conquerant2.webp"
+          src="./assets/img/guillaume-le-conquerant2.webp"
           alt="guillaume le conquérant"
         /></a>
         <h3>Les pouvoirs de la reine <span class="txt__purple">Mathilde</span></h3>
         <a href="#"><img
           class="game__img2 game__img"
-          src="/img/mathilde2.webp"
+          src="./assets/img/mathilde2.webp"
           alt="reine Mathilde"
         /></a>
         <h3>L'héritage des <span class="txt__red">vikings</span></h3>
-        <a href="#"><img class="game__img3 game__img" src="/img/viking.webp" alt="viking" /></a>
+        <a href="#"><img class="game__img3 game__img" src="./assets/img/viking.webp" alt="viking" /></a>
       </div>
       
       <img
         class="game__img4"
-        src="/img/famille detective-sm.webp"
+        src="./assets/img/famille detective-sm.webp"
         alt="famille detective"
       />
     </main>
@@ -81,7 +81,7 @@
         <li>
           <img
             class="footer__icn-img"
-            src="/img/facebook-square-svgrepo-com.svg"
+            src="./assets/img/facebook-square-svgrepo-com.svg"
             alt="facebook"
           />
         </li>
@@ -89,21 +89,21 @@
         <li>
           <img
             class="footer__icn-img"
-            src="/img/twitter-svgrepo-com.svg"
+            src="./assets/img/twitter-svgrepo-com.svg"
             alt="twitter"
           />
         </li>
         <li>
           <img
             class="footer__icn-img"
-            src="/img/instagram-1-svgrepo-com.svg"
+            src="./assets/img/instagram-1-svgrepo-com.svg"
             alt="instagram"
           />
         </li>
       </ul>
     </footer>
 
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/burger.js"></script>
+    <script  src="./js/main.js"></script>
+    <script src="./js/burger.js"></script>
   </body>
 </html>

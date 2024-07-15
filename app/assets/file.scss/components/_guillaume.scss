@@ -7,20 +7,20 @@
 }
 .game1-ttl {
   text-align: center;
-  margin-bottom: 2rem;
+ margin: 2rem 0 2rem 0;
   color: $gold;
   filter: drop-shadow(black 2px 2px);
 }
 
-.game1-img {
-  
-  border-bottom: $gold 2px solid;
-  width: fit-content;
-}
+
 .game1__img2 {
   bottom: 8rem;
   left: 15rem;
   
+}
+.game1-img1{
+  left: 1.5rem;
+  top: 0.8rem;
 }
 .game1-txt {
   margin-bottom: -4rem;

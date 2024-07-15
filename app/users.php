@@ -135,8 +135,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </header>
 
       <main>
-        <section id="login" class="form-container">
-            <h2 class="users-ttl">Login</h2>
+        <section id="login" class="box__style form-box">
+            <h2 class="users-ttl">Vous avez un compte ?<br>Identifiez vous</h2>
             <?php if (!empty($loginErrors)): ?>
                 <div class="error-message">
                     <ul>
@@ -153,15 +153,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="password">Mot de passe :</label>
+                    <input class="form-inp" type="password" id="password" name="password" required>
                 </div>
-                <button type="submit" name="login_submit" class="btn btn-primary">Login</button> 
+                <button type="submit" name="login_submit" class="btn ">S'identifier</button> 
             </form>
         </section>
 
-        <section id="register" class="form-container">
-            <h2>Register</h2>
+        <section id="register" class="box__style form-box">
+            <h2 class="users-ttl" >Créer un compte</h2>
             <?php if (!empty($registerErrors)): ?>
                 <div class="error-message">
                     <ul>
@@ -176,34 +176,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form action="users.php#register" method="post" enctype="multipart/form-data"> 
                 <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
                 <div class="form-group">
-                    <label for="firstname">First Name:</label>
+                    <label for="firstname">Nom:</label>
                     <input type="text" id="firstname" name="firstname" required>
                 </div>
                 <div class="form-group">
-                    <label for="pseudo">Username:</label>
-                    <input type="text" id="pseudo" name="pseudo" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastname">Last Name:</label>
+                    <label for="lastname">Prénom:</label>
                     <input type="text" id="lastname" name="lastname" required>
                 </div>
+                <div class="form-group">
+                    <label for="pseudo">Pseudo:</label>
+                    <input type="text" id="pseudo" name="pseudo" required>
+                </div>
+                
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
+                    <label for="password">Mot de passe:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label for="avatar">Avatar:</label>
-                    <input type="file" id="avatar" name="avatar" accept="image/*">
+                    <label for="avatar">Avatar profil:</label>
+                    <input  type="file" id="avatar" name="avatar" accept="image/*">
                 </div>
                 <div class="form-group">
-                    <label for="description">Description:</label>
+                    <label for="description">Présentez vous en quelques mots:</label>
                     <textarea id="description" name="description"></textarea>
                 </div>
-                <button type="submit" name="register_submit" class="btn btn-danger">Register</button>
+                <button type="submit" name="register_submit" class="btn ">Créer le compte</button>
             </form>
         </section>
     </main>

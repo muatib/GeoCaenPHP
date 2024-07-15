@@ -16,7 +16,7 @@
                 Armé de votre smartphone ou votre tablette, naviguez dans les rues sinueuses et les ruelles pittoresques de Caen tout en découvrant les joyaux cachés ainsi que des monuments emblématiques datant de l'époque médiévale. Du majestueux château de Caen aux superbes Abbaye aux Hommes et Abbaye aux Dames, chaque lieu recèle de secrets à découvrir.
             </p>
         </div>
-        <a class="link" href="jeux.php"><button class="btn">jouer ici !</button></a>
+        <a class="link" href="game.php"><button class="btn">jouer ici !</button></a>
         <img class="main__content-img2 site__img" src="/img/femme_window-sm.webp" alt="enqueteur" />
         <img class="main__content-img2--lg" src="/img/femme_window.png" alt="enqueteur" />
         <div class="box-content main__content-txt box__style">

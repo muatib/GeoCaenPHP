@@ -1,28 +1,28 @@
-.game1__img {
-  border-bottom: $gold 2px solid;
-}
-.game1__logo {
+
+.game1-logo {
   filter: drop-shadow($gold 1px 1px 1px);
   position: relative;
   top: -3rem;
   left: 9rem;
 }
-.game1__ttl {
+.game1-ttl {
   text-align: center;
   margin-bottom: 2rem;
   color: $gold;
   filter: drop-shadow(black 2px 2px);
 }
 
-.game1__img1 {
-  bottom: 8rem;
-  left: 15rem;
+.game1-img {
+  
+  border-bottom: $gold 2px solid;
+  width: fit-content;
 }
 .game1__img2 {
   bottom: 8rem;
   left: 15rem;
+  
 }
-.game1__txt {
+.game1-txt {
   margin-bottom: -4rem;
 }
 .game__footer {

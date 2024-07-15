@@ -35,7 +35,7 @@
                     <a class="menu__container-lnk" href="users.php">Se connecter / S'inscrire</a>
                 </li>
                 <li class="menu__container-itm">
-                    <a class="menu__container-lnk" href="jeux.php">Présentation des jeux</a>
+                    <a class="menu__container-lnk" href="game.php">Présentation des jeux</a>
                 </li>
                 <li class="menu__container-itm">
                     <a class="menu__container-lnk" href="#">A propos de GeoCaen</a>

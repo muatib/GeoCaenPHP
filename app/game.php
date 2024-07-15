@@ -46,7 +46,7 @@
       <p class="game__txt"><span class="txt__red">(</span> Cliquez sur l'image pour accéder au jeu <span class="txt__red">)</span></p>
       <div class="game">
         <h3>Les trésors cachés de <br> Guillaume le <span class="txt__gold">Conquérant</span></h3>
-        <a href="game-php"><img
+        <a href="game-pres.php"><img
           class="game__img1 game__img"
           src="/img/guillaume-le-conquerant2.webp"
           alt="guillaume le conquérant"

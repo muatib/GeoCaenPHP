@@ -12,6 +12,7 @@ function connectDb() {
     } catch (PDOException $e) {
         die('Database connection failed: ' . $e->getMessage());
     }
+    
 }
 
 function generateCSRFToken() {
@@ -21,9 +22,9 @@ function generateCSRFToken() {
     return bin2hex(random_bytes(32));
 }
 
-function registerUser($firstname, $pseudo, $lastname, $email, $password, $avatar, $description) {
+function registerUser($firstname, $pseudo, $lastname, $email, $password, $avatarFile, $description) {
     $conn = connectDb();
-
+    var_dump($conn);
     $checkSql = "SELECT COUNT(*) FROM Register_user WHERE pseudo = :pseudo OR email = :email";
     $checkStmt = $conn->prepare($checkSql);
     $checkStmt->bindValue(':pseudo', $pseudo);
@@ -35,8 +36,8 @@ function registerUser($firstname, $pseudo, $lastname, $email, $password, $avatar
         return false; 
     }
 
-    if ($avatar && $avatar['error'] === UPLOAD_ERR_OK) {
-        $avatarData = file_get_contents($avatar['tmp_name']);
+    if ($avatarFile && $avatarFile['error'] === UPLOAD_ERR_OK) {
+        $avatarData = file_get_contents($avatarFile['tmp_name']);
     } else {
         $avatarData = null; 
     }
@@ -51,7 +52,7 @@ function registerUser($firstname, $pseudo, $lastname, $email, $password, $avatar
     $stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
-    $stmt->bindParam(':avatar', $avatarData, PDO::PARAM_LOB);
+    $stmt->bindParam(':avatar', $avatarData, PDO::PARAM_LOB); 
     $stmt->bindParam(':description', $description, PDO::PARAM_STR);
 
     try {

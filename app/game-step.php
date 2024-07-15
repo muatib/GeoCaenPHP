@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <img class="game1__img" src="./assets/img/guillaume-le-conquerant_1024x.webp" alt="guillaume" />
+    <img class="game1-img" src="./assets/img/guillaume-le-conquerant_1024x.webp" alt="guillaume" />
     <img class="game1-logo" src="./assets/img/Geo-removebg-preview.webp" alt="logo" />
   </header>
   <main>
@@ -29,7 +29,7 @@
     <div id="correctPopup" class="popup">
       <p class="popup__txt">Bonne réponse bravo !</p>
       <img class="site__img pop__img" src="/img/bravo-sm.webp" alt="" />
-      <a class="link" href="middleStep.html">
+      <a class="link" href="middleStep.php">
         <button class="pop__btn btn" id="closeCorrectPopup">suivant</button>
       </a>
     </div>

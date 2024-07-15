@@ -3,13 +3,13 @@ include 'header.php';
 ?>
 
 <main>
-    <img class="game1__img" src="/img/guillaume-le-conquerant_1024x.webp" alt="" />
-    <img class="game1__logo" src="/img/Geo-removebg-preview.webp" alt="" />
+    <img class="game1-img" src="/img/guillaume-le-conquerant_1024x.webp" alt="" />
+    <img class="game1-logo" src="/img/Geo-removebg-preview.webp" alt="" />
 
-    <h1 class="game1__ttl">
+    <h1 class="game1-ttl">
         Les trésors cachés de <br />Guillaume le Conquérant
     </h1> 
-    <div class="game1__txt">
+    <div class="game1-txt">
         <p class="box-content box__style">
             Une ancienne légende persiste depuis des siècles parmi les habitants de Caen.... <br /><br />
             On raconte que Guillaume aurait dissimulé des trésors inestimables dans les monuments qu’il avait fait construire. <br /><br />
@@ -22,7 +22,7 @@ include 'header.php';
         <img class="game1__img1 site__img" src="/img/boy-sm.webp" alt="garçon" />
         <img class="game1__img2 site__img" src="/img/filette-sm.webp" alt="fille" />
     </div>
-    <a class="link" href="guillaumeStep1.php"><button class="btn">Lancez l'enquête !</button></a>
+    <a class="link" href="game-step.php"><button class="btn">Lancez l'enquête !</button></a>
 </main>
 
 <?php include 'footer.php'; ?>

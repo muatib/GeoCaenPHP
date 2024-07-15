@@ -36,7 +36,7 @@
           <a class="link" href="#" onclick="closePopup('popupk')">
             <button class="btn popupk__btn">continuer</button>
           </a>
-          <a class="link" href="index.html" onclick="closePopup('popupk')">
+          <a class="link" href="index.php" onclick="closePopup('popupk')">
             <button class="btn popupk__btn">quitter</button>
           </a>
         </div>

@@ -1,3 +1,5 @@
+
+<?php include 'functions.php' ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,7 +19,7 @@
   </header>
   <main>
     <p class="box-content box__style" id="game1__txt">
-      <img src="/img/question-sm.webp" alt="interrogation" />
+      <img src="./assets/img/detective_interroge-removebg-preview.webp" alt="interrogation" />
     </p>
 
     <p class="wrong__txt" id="txt__wrong">Presque ! N'abandonnez pas !</p>
@@ -28,14 +30,14 @@
 
     <div id="correctPopup" class="popup">
       <p class="popup__txt">Bonne réponse bravo !</p>
-      <img class="site__img pop__img" src="/img/bravo-sm.webp" alt="" />
+      <img class="site__img pop__img" src="./assets/img/bravo-sm.webp" alt="" />
       <a class="link" href="middleStep.php">
         <button class="pop__btn btn" id="closeCorrectPopup">suivant</button>
       </a>
     </div>
 
     <div id="incorrectPopup" class="popup">
-      <img class="site__img pop__img" src="/img/detective_interroge-removebg-preview.webp" alt="" />
+      <img class="site__img pop__img" src="./assets/img/detective_interroge-removebg-preview.webp" alt="" />
       <button class="pop__btn btn" id="closeIncorrectPopup">Fermer</button>
     </div>
   </main>
@@ -43,7 +45,7 @@
     <button class="game__btn" id="home-button" href="#" onclick="displayPopup('popupk')">accueil</button>
     <div class="popup box__style" id="popupk">
       <p class="popupk__txt">Souhaitez vous vraiment quitter ?</p>
-      <img class="popupk__img" src="/img/detective_interroge-removebg-preview.webp" alt="" />
+      <img class="popupk__img" src="./assets/img/detective_interroge-removebg-preview.webp" alt="" />
       <div class="popupk__container">
         <a class="link" href="#" onclick="closePopup('popupk')">
           <button class="btn popupk__btn">continuer</button>
@@ -56,7 +58,7 @@
     <button class="game__btn" id="showClue" href="#" onclick="displayPopup('popup')">indice</button>
     <div class="popup box__style" id="popup">
       <p class="popup__txt" id="clue"></p>
-      <img class="pop__img site__img" src="/img/detective_interroge-removebg-preview.webp" alt="" />
+      <img class="pop__img site__img" src="./assets/img/detective_interroge-removebg-preview.webp" alt="" />
       <a class="link" href="#" onclick="closePopup('popup')">
         <button class="btn pop__btn">fermer</button>
       </a>

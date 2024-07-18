@@ -7,71 +7,35 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-
-
 $firstname = $pseudo = $lastname = $email = $password = $avatar = $description = "";
 $loginErrors = [];
 $registerErrors = [];
 $registerSuccess = false;
-
 
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = generateCSRFToken();
 }
 $csrfToken = $_SESSION['csrf_token'];
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         die("Erreur CSRF détectée.");
     }
 
-    
-    if (isset($_POST['login_submit'])) {
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-
-        $loginResult = loginUser($email, $password);
-
-        if ($loginResult === true) {
-            header("Location: index.php"); 
-            exit();
-        } else {
-            $loginErrors[] = ($loginResult === false) ? "Aucun utilisateur trouvé avec cet email." : "Mot de passe incorrect.";
-        }
-    }
-     }
-    
-    
     if (isset($_POST['register_submit'])) {
-        $firstname = isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname']) : '';
-        $pseudo = isset($_POST['pseudo']) ? htmlspecialchars($_POST['pseudo']) : '';
-        $lastname = isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname']) : '';
-        $email = isset($_POST['email']) ? $_POST['email'] : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
-        $avatar = isset($_FILES['avatar']) ? $_FILES['avatar'] : null;
-        $description = isset($_POST['description']) ? htmlspecialchars($_POST['description']) : '';
+        $firstname = $_POST['firstname'] ?? '';
+        $pseudo = $_POST['pseudo'] ?? '';
+        $lastname = $_POST['lastname'] ?? '';
+        $email = $_POST['email'] ?? '';
+        $password = $_POST['password'] ?? '';
+        $description = $_POST['description'] ?? '';
+        $avatar = $_FILES['avatar'] ?? null;
 
-    if (empty($firstname) || empty($pseudo) || empty($lastname) || empty($email) || empty($password)) {
-        $registerErrors[] = "Tous les champs sont obligatoires.";
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $registerErrors[] = "L'adresse email n'est pas valide.";
-    }
-
-    if (empty($registerErrors)) {
-        if (registerUser($firstname, $pseudo, $lastname, $email, $password, $avatar, $description)) {
-            $registerSuccess = true;
-            $_SESSION['csrf_token'] = generateCSRFToken(); 
-            header("Location: users.php#login"); 
-            exit();
-        } else {
-            $registerErrors[] = "Ce pseudo ou cet email est déjà utilisé. Veuillez en choisir un autre.";
-        }
-        if ($registerSuccess) {
-          $_SESSION['csrf_token'] = generateCSRFToken(); 
-      }
+        handleRegistration($firstname, $pseudo, $lastname, $email, $password, $avatar, $description);
+    } elseif (isset($_POST['login_submit'])) {
+        $email = $_POST['email'] ?? '';
+        $password = $_POST['password'] ?? '';
+        handleLogin($email, $password);
     }
 }
 ?>
@@ -150,18 +114,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="logemail" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe :</label>
-                    <input class="form-inp" type="password" id="password" name="password" required>
+                    <input class="form-inp" type="password" id="logpassword" name="password" required>
                 </div>
                 <button type="submit" name="login_submit" class="btn ">S'identifier</button> 
             </form>
         </section>
 
         <section id="register" class="box__style form-box">
-            <h2 class="users-ttl" >Créer un compte</h2>
+            <h2 class="users-ttl">Créer un compte</h2>
             <?php if (!empty($registerErrors)): ?>
                 <div class="error-message">
                     <ul>
@@ -171,26 +135,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </ul>
                 </div>
             <?php elseif ($registerSuccess): ?>
-                <div class="success-message">Registration successful! Please log in.</div>
+                <div class="success-message">Inscription réussie ! Vous pouvez maintenant vous connecter.</div>
             <?php endif; ?>
             <form action="users.php#register" method="post" enctype="multipart/form-data"> 
                 <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
                 <div class="form-group">
                     <label for="firstname">Nom:</label>
-                    <input type="text" id="firstname" name="firstname" required>
+                    <input type="text" id="firstname" name="firstname" required value="<?php echo htmlspecialchars($firstname); ?>">
                 </div>
                 <div class="form-group">
                     <label for="lastname">Prénom:</label>
-                    <input type="text" id="lastname" name="lastname" required>
+                    <input type="text" id="lastname" name="lastname" required value="<?php echo htmlspecialchars($lastname); ?>">
                 </div>
                 <div class="form-group">
                     <label for="pseudo">Pseudo:</label>
-                    <input type="text" id="pseudo" name="pseudo" required>
+                    <input type="text" id="pseudo" name="pseudo" required value="<?php echo htmlspecialchars($pseudo); ?>">
                 </div>
-                
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required value="<?php echo htmlspecialchars($email); ?>">
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe:</label>
@@ -198,14 +161,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-group">
                     <label for="avatar">Avatar profil:</label>
-                    <input  type="file" id="avatar" name="avatar" accept="image/*">
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
                 </div>
                 <div class="form-group">
                     <label for="description">Présentez vous en quelques mots:</label>
-                    <textarea id="description" name="description"></textarea>
+                    <textarea id="description" name="description"><?php echo htmlspecialchars($description); ?></textarea>
                 </div>
-                <button type="submit" name="register_submit" class="btn ">Créer le compte</button>
+                <button type="submit" name="register_submit" class="btn">Créer le compte</button>
             </form>
         </section>
     </main>
-    <?php include 'footer.php'; ?> 
+    <footer class="footer">
+        <div class="footer__txt">
+            <p>infos contact</p>
+            <p>Suivez notre actualité :</p>
+            <p>
+                <span class="txt__blue">Geo</span><span class="txt__red">Caen</span> tout droits réservés
+            </p>
+        </div>
+        <ul class="footer__icn">
+            <li>
+                <img class="footer__icn-img" src="./assets/img/facebook-square-svgrepo-com.svg" alt="facebook" />
+            </li>
+            <li>
+                <img class="footer__icn-img" src="./assets/img/twitter-svgrepo-com.svg" alt="twitter" />
+            </li>
+            <li>
+                <img class="footer__icn-img" src="./assets/img/instagram-1-svgrepo-com.svg" alt="instagram" />
+            </li>
+        </ul>
+    </footer>
+    <script  src="./js/burger.js"></script>
+    <script  src="./js/main.js"></script>
+    
+</body>
+</html>

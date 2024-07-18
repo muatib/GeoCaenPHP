@@ -23,47 +23,53 @@ function generateCSRFToken() {
 }
 
 function registerUser($firstname, $pseudo, $lastname, $email, $password, $avatarFile, $description) {
-    $conn = connectDb();
-    var_dump($conn);
-    $checkSql = "SELECT COUNT(*) FROM Register_user WHERE pseudo = :pseudo OR email = :email";
-    $checkStmt = $conn->prepare($checkSql);
-    $checkStmt->bindValue(':pseudo', $pseudo);
-    $checkStmt->bindValue(':email', $email);
-    $checkStmt->execute();
-    $count = $checkStmt->fetchColumn();
-
-    if ($count > 0) {
-        return false; 
-    }
-
-    if ($avatarFile && $avatarFile['error'] === UPLOAD_ERR_OK) {
-        $avatarData = file_get_contents($avatarFile['tmp_name']);
-    } else {
-        $avatarData = null; 
-    }
-
-    $sql = "INSERT INTO Register_user (firstname, pseudo, lastname, email, password, avatar, description)
-            VALUES (:firstname, :pseudo, :lastname, :email, :password, :avatar, :description)";
-    $stmt = $conn->prepare($sql);
-
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $stmt->bindParam(':firstname', $firstname, PDO::PARAM_STR);
-    $stmt->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
-    $stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
-    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-    $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
-    $stmt->bindParam(':avatar', $avatarData, PDO::PARAM_LOB); 
-    $stmt->bindParam(':description', $description, PDO::PARAM_STR);
-
     try {
-        $stmt->execute();
-        return true;
+        $conn = connectDb();
+        
+        // Vérification de l'existence de l'utilisateur
+        $checkSql = "SELECT COUNT(*) FROM Register_user WHERE pseudo = :pseudo OR email = :email";
+        $checkStmt = $conn->prepare($checkSql);
+        $checkStmt->bindValue(':pseudo', $pseudo);
+        $checkStmt->bindValue(':email', $email);
+        $checkStmt->execute();
+        $count = $checkStmt->fetchColumn();
+
+        if ($count > 0) {
+            error_log("User registration failed: User already exists");
+            return "L'utilisateur existe déjà";
+        }
+
+        // Insertion de l'utilisateur sans avatar
+        $sql = "INSERT INTO Register_user (firstname, pseudo, lastname, email, password, description)
+                VALUES (:firstname, :pseudo, :lastname, :email, :password, :description)";
+        $stmt = $conn->prepare($sql);
+
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bindParam(':firstname', $firstname, PDO::PARAM_STR);
+        $stmt->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+        $stmt->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+
+        $result = $stmt->execute();
+        
+        if ($result) {
+            error_log("User registration successful for email: " . $email);
+            return true;
+        } else {
+            $errorInfo = $stmt->errorInfo();
+            error_log("User registration failed: " . implode(", ", $errorInfo));
+            return "Erreur lors de l'insertion : " . $errorInfo[2];
+        }
     } catch (PDOException $e) {
-        error_log($e->getMessage());
-        return false; 
+        error_log("Database error during user registration: " . $e->getMessage());
+        return "Erreur de base de données : " . $e->getMessage();
+    } catch (Exception $e) {
+        error_log("Unexpected error during user registration: " . $e->getMessage());
+        return "Erreur inattendue : " . $e->getMessage();
     }
 }
-
 function loginUser($email, $password)
 {
     $conn = connectDb();
@@ -106,7 +112,7 @@ function handleRegistration($firstname, $pseudo, $lastname, $email, $password, $
 {
     global $registerErrors, $registerSuccess;
 
-
+    // Validation
     if (empty($firstname) || empty($pseudo) || empty($lastname) || empty($email) || empty($password)) {
         $registerErrors[] = "Tous les champs sont obligatoires.";
     }
@@ -115,14 +121,17 @@ function handleRegistration($firstname, $pseudo, $lastname, $email, $password, $
         $registerErrors[] = "L'adresse email n'est pas valide.";
     }
 
-
+    // Si pas d'erreurs, tenter l'enregistrement
     if (empty($registerErrors)) {
-        if (registerUser($firstname, $pseudo, $lastname, $email, $password, $avatar, $description)) {
+        $result = registerUser($firstname, $pseudo, $lastname, $email, $password, $avatar, $description);
+        if ($result === true) {
             $registerSuccess = true;
+            // Redirection vers la page de connexion
             header("Location: users.php#login");
             exit();
         } else {
-            $registerErrors[] = "Ce pseudo ou cet email est déjà utilisé. Veuillez en choisir un autre.";
+            // Afficher l'erreur spécifique retournée par registerUser
+            $registerErrors[] = "L'enregistrement a échoué : " . $result;
         }
     }
 }

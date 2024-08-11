@@ -16,9 +16,14 @@
 }
 .header__logo {
   position: relative;
-  // top: 1rem;
-  left: 15%;
+  left: 20%;
   filter: drop-shadow($clear-blue 1px 1px);
+}
+.header-user-img {
+  position: relative;
+  left: 30%;
+
+  bottom: 3%;
 }
 
 // MENU BURGER
@@ -35,8 +40,8 @@
   .menu__toggle-bar,
   .menu__toggle-bar:before,
   .menu__toggle-bar:after {
-    background: white;
-    filter: drop-shadow($red 1px 1px);
+    background: $white;
+    // filter: drop-shadow($blue-shadow 1px 1px);
     display: block;
     height: 2px;
     opacity: 1;
@@ -111,13 +116,15 @@
   .menu__container-lnk {
     color: $gold;
     display: block;
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 30px;
+    margin-left: 15px;
     text-decoration: none;
+    text-align: left;
   }
 }
-@media screen and (max-width: 899px){
-  .nav__lg-lst{
+@media screen and (max-width: 899px) {
+  .nav__lg-lst {
     display: none;
   }
 }
@@ -137,32 +144,28 @@
     overflow: visible;
     z-index: 2;
   }
-  
-  
 }
 @media screen and (min-width: 900px) {
   .menu__toggle {
     display: none;
   }
-  .header__img{
+  .header__img {
     display: none;
   }
-  .header__logo{
+  .header__logo {
     left: 5%;
   }
-  
-  .nav__lg-lst{
+
+  .nav__lg-lst {
     position: absolute;
     left: 40%;
     bottom: 25%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-     
   }
-  .nav__lnk{
+  .nav__lnk {
     margin: 0 2rem 0 1rem;
     font-size: 1.5rem;
-    
   }
 }

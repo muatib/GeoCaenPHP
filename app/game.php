@@ -1,109 +1,75 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GeoCean jeux</title>
-    <script type="module" src="http://localhost:5173/@vite/client"></script>
-        <script type="module" src="http://localhost:5173/js/main.js"></script>
-  </head>
-  <body>
-    <header class="header-container">
-      <img
-        class="header__img"
-        src="./assets/img/logovillecaenndie_2016-removebg-preview.webp"
-        alt="enqueteur"
-      />
-      <img
-        class="header__logo main__img"
-        src="./assets/img/Geo-removebg-preview.webp"
-        alt="logo GeoCaen"
-      />
 
-      <div class="menu__toggle" id="burger__menu">
-        <span class="menu__toggle-bar"></span>
-      </div>
-      <nav id="menu">
-        <ul class="menu__container">
-          <li class="menu__container-itm">
-            <a class="menu__container-lnk link" href="index.php">Accueil</a>
-          </li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GeoCean jeux</title>
+  <script type="module" src="http://localhost:5173/@vite/client"></script>
+  <script type="module" src="http://localhost:5173/js/main.js"></script>
+</head>
 
-          <li class="menu__container-itm">
-            <a class="menu__container-lnk" href="#">A propos de GeoCaen</a>
-          </li>
-          <li class="menu__container-itm">
-            <a class="menu__container-lnk" href="#">Nous contacter</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h2 class="game__ttl">
-        <span class="txt__red">Bienvenue</span> enquêteur ! <br />
-        Choisissez le mystère à <span class="txt__blue">percer</span>
-      </h2>
-      <p class="game__txt"><span class="txt__red">(</span> Cliquez sur l'image pour accéder au jeu <span class="txt__red">)</span></p>
-      <div class="game">
-        <h3>Les trésors cachés de <br> Guillaume le <span class="txt__gold">Conquérant</span></h3>
-        <a href="game-pres.php"><img
-          class="game__img1 game__img"
-          src="./assets/img/guillaume-le-conquerant2.webp"
-          alt="guillaume le conquérant"
-        /></a>
-        <h3>Les pouvoirs de la reine <span class="txt__purple">Mathilde</span></h3>
-        <a href="#"><img
-          class="game__img2 game__img"
-          src="./assets/img/mathilde2.webp"
-          alt="reine Mathilde"
-        /></a>
-        <h3>L'héritage des <span class="txt__red">vikings</span></h3>
-        <a href="#"><img class="game__img3 game__img" src="./assets/img/viking.webp" alt="viking" /></a>
-      </div>
-      
-      <img
-        class="game__img4"
-        src="./assets/img/famille detective-sm.webp"
-        alt="famille detective"
-      />
-    </main>
+<body>
+  <header class="header-container">
+    <img
+      class="header__img"
+      src="./assets/img/Yellow_Simple_Depop_Profile_Picture-removebg-preview.webp"
+      alt="enqueteur" />
+    <img
+      class="header__logo main__img"
+      src="./assets/img/logo geocaen.png"
+      alt="logo GeoCaen" />
+      <a class="header-user-img" href="login.php"><img  src="./assets/img//icons8-compte-48.webp" alt="logo compte"></a>
 
-    <footer class="footer">
-      <div class="footer__txt">
-        <p>infos contact</p>
-        <p>Suivez notre actualité :</p>
-        <p>
-          <span class="txt__blue">Geo</span
-          ><span class="txt__red">Caen</span> tout droits réservés
-        </p>
-      </div>
-      <ul class="footer__icn">
-        <li>
-          <img
-            class="footer__icn-img"
-            src="./assets/img/facebook-square-svgrepo-com.svg"
-            alt="facebook"
-          />
+    <div class="menu__toggle" id="burger__menu">
+      <span class="menu__toggle-bar"></span>
+    </div>
+    <nav id="menu">
+      <ul class="menu__container">
+        <li class="menu__container-itm">
+          <a class="menu__container-lnk link" href="index.php">Accueil</a>
         </li>
 
-        <li>
-          <img
-            class="footer__icn-img"
-            src="./assets/img/twitter-svgrepo-com.svg"
-            alt="twitter"
-          />
+        <li class="menu__container-itm">
+          <a class="menu__container-lnk" href="#">A propos de GeoCaen</a>
         </li>
-        <li>
-          <img
-            class="footer__icn-img"
-            src="./assets/img/instagram-1-svgrepo-com.svg"
-            alt="instagram"
-          />
+        <li class="menu__container-itm">
+          <a class="menu__container-lnk" href="#">Nous contacter</a>
         </li>
       </ul>
-    </footer>
+    </nav>
+  </header>
+  <main>
+    <h2 class="game__ttl">
+      <span class="txt__red">Bienvenue</span> enquêteur ! <br />
+      Choisissez le mystère à <span class="txt__blue">percer</span>
+    </h2>
+    <p class="game__txt"><span class="txt__red">(</span> Cliquez sur l'image pour accéder au jeu <span class="txt__red">)</span></p>
+    <div class="game">
+      <h3>Les trésors cachés de <br> Guillaume le <span class="txt__gold">Conquérant</span></h3>
+      <a href="game-pres.php"><img
+          class="game__img1 game__img"
+          src="./assets/img/guillaume-le-conquerant2.webp"
+          alt="guillaume le conquérant" /></a>
+      <h3>Les pouvoirs de la reine <span class="txt__purple">Mathilde</span></h3>
+      <a href="#"><img
+          class="game__img2 game__img"
+          src="./assets/img/mathilde2.webp"
+          alt="reine Mathilde" /></a>
+      <h3>L'héritage des <span class="txt__red">vikings</span></h3>
+      <a href="#"><img class="game__img3 game__img" src="./assets/img/viking.webp" alt="viking" /></a>
+    </div>
 
-    <script  src="./js/main.js"></script>
-    <script src="./js/burger.js"></script>
-  </body>
+    <img
+      class="game__img4"
+      src="./assets/img/famille detective-sm.webp"
+      alt="famille detective" />
+  </main>
+
+ <?php include 'footer.php'; ?>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/burger.js"></script>
+</body>
+
 </html>

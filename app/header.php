@@ -15,8 +15,9 @@
 
 <body>
     <header class="header-container">
-        <img class="header__img" src="./assets/img/logovillecaenndie_2016-removebg-preview.webp" alt="enqueteur" />
-        <img class="header__logo site__img" src="./assets/img/Geo-removebg-preview.webp" alt="logo GeoCaen" />
+        <img class="header__img" src="./assets/img/Yellow_Simple_Depop_Profile_Picture-removebg-preview.webp" alt="enqueteur" />
+        <img class="header__logo site__img" src="./assets/img/logo geocaen.png" alt="logo GeoCaen" />
+        <a class="header-user-img" href="login.php"><img  src="./assets/img//icons8-compte-48.webp" alt="logo compte"></a>
         <div class="nav__lg">
             <ul class="nav__lg-lst">
                 <li><a class="nav__lnk" href="index.php">Accueil</a></li>
@@ -31,9 +32,7 @@
         </div>
         <nav id="menu">
             <ul class="menu__container">
-                <li class="menu__container-itm">
-                    <a class="menu__container-lnk" href="users.php">Se connecter / S'inscrire</a>
-                </li>
+                
                 <li class="menu__container-itm">
                     <a class="menu__container-lnk" href="game.php">Présentation des jeux</a>
                 </li>

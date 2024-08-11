@@ -11,7 +11,7 @@
             <h1 class="main__content-ttl">
                 Bienvenue sur <span class="txt__red">Geo</span><span class="txt__blue">Caen</span>
             </h1>
-            <h3 class="main__content-ttl">Explorez les merveilles de Caen :</h3>
+            <h3 class="main__content-ttl">Explorez les merveilles de Caen </h3>
             <p>
                 Armé de votre smartphone ou votre tablette, naviguez dans les rues sinueuses et les ruelles pittoresques de Caen tout en découvrant les joyaux cachés ainsi que des monuments emblématiques datant de l'époque médiévale. Du majestueux château de Caen aux superbes Abbaye aux Hommes et Abbaye aux Dames, chaque lieu recèle de secrets à découvrir.
             </p>
@@ -21,7 +21,7 @@
         <img class="main__content-img2--lg" src="/img/femme_window.png" alt="enqueteur" />
         <div class="box-content main__content-txt box__style">
             <h3 class="main__content-ttl">
-                Résolvez des mystères <span class="txt__red">historiques</span> :
+                Résolvez des mystères <span class="txt__red">historiques</span> 
             </h3>
             <p>
                 Mettez vos talents de détective à l'épreuve en résolvant des mystères vieux de plusieurs siècles et en démêlant des énigmes historiques disséminées dans la ville. Suivez des indices, déchiffrez des messages énigmatiques et percez les secrets du passé de Caen pour découvrir des trésors et des artefacts cachés
@@ -43,7 +43,7 @@
             <img class="main__content-img3 site__img" src="./assets/img/filette-sm.webp" alt="fillette" />
         </div>
 
-        <a class="link" href="jeux.php"><button class="btn">jouer ici !</button></a>
+        <a class="link" href="game.php"><button class="btn">jouer ici !</button></a>
     </section>
     <ul class="img__container">
         <li><img class="img__itm" src="/img/caen image.jpg" alt="" /></li>

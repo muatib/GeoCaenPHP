@@ -1,5 +1,34 @@
 
-<?php include 'functions.php' ?>
+<?php include 'functions.php';
+if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')   
+{
+   // Récupérer les paramètres de la requête AJAX
+   $gameId = $_GET['game_id'];
+   $step = $_GET['step'];
+
+   // Connexion à la base de données
+   $db = connectDb();
+
+   // Requête SQL pour récupérer les données de l'énigme
+   $stmt = $db->prepare("
+       SELECT gs.Id_game_step, gs.clue, gs.question, gs.funfact, a.answer 
+       FROM game_step gs
+       JOIN answer a ON gs.Id_game_step = a.Id_game_step
+       WHERE gs.Id_game = ? AND gs.step_order = ? AND a.GoodFalse = 1
+   "); 
+   $stmt->execute([$gameId, $step]);
+
+   // Récupérer les données
+   $enigmaData = $stmt->fetch();
+
+   // Renvoyer les données en JSON
+   header('Content-Type: application/json');
+   echo json_encode($enigmaData);
+
+   // Arrêter l'exécution du script PHP après avoir renvoyé les données JSON
+   exit; 
+} 
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -66,6 +95,7 @@
   </footer>
   <script src="./js/main.js"></script>
   <script src="./js/game.js"></script>
+  
 </body>
 
 </html>

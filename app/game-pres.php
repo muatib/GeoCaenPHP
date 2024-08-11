@@ -11,12 +11,12 @@
     <header class="header-container">
       <img
         class="header__img"
-        src="./assets/img/logovillecaenndie_2016-removebg-preview.webp"
+        src="./assets/img/Yellow_Simple_Depop_Profile_Picture-removebg-preview.webp"
         alt="enqueteur"
       />
       <img
         class="header__logo main__img"
-        src="./assets/img/Geo-removebg-preview.webp"
+        src="./assets/img/logo geocaen.png"
         alt="logo GeoCaen"
       />
 

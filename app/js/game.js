@@ -1,83 +1,79 @@
-let currentIndex = 0;
-let data;
+let gameData = {};
+let currentStep = 1; // Commencez à l'étape 1
+
+
 
 function init() {
-  fetch("/json/dat.json")
-    .then((response) => response.json())
-    .then((jsonData) => {
-      data = jsonData;
-      if (localStorage.getItem("currentIndex")) {
-        currentIndex = parseInt(localStorage.getItem("currentIndex"));
-      }
-      updateContent();
-      const popups = document.querySelectorAll(".popup");
-      popups.forEach((popup) => {
-        popup.classList.remove("show");
-      });
-    });
-};
+  currentIndex = 0; // Assurez-vous que currentIndex est initialisé
+  
+  if (localStorage.getItem("currentIndex")) {
+    currentIndex = parseInt(localStorage.getItem("currentIndex"));
+  }
+  updateContent();
+  const popups = document.querySelectorAll(".popup");
+  popups.forEach((popup) => {
+    popup.classList.remove("show");
+  });
+}
 
 document.addEventListener("DOMContentLoaded", init);
 
 function updateContent() {
-  if (data) {
-    const gameContent = data[currentIndex];
-    const game1Txt = document.querySelector("#game1__txt");
-    game1Txt.textContent = gameContent.text;
-    document.querySelector("#showClue").addEventListener("click", () => {
-      const clue = document.querySelector("#clue");
-      clue.textContent = gameContent.clue;
-    });
+  if (gameData) {
+    document.getElementById('game1__txt').textContent = gameData.question;
+    document.getElementById('clue').textContent = gameData.clue;
+
+    // Réinitialiser l'affichage en cas de nouvelle question
+    document.getElementById('answer').value = '';
+    document.getElementById('txt__wrong').classList.remove('wrong__txt--disp');
+    document.getElementById('answer').classList.remove('game__form-wrong', 'shake');
   }
-};
+}
 
 function checkAnswer() {
-  const userAnswer = document.querySelector("#answer").value.toLowerCase();
-  const correctAnswer = data[currentIndex].answer.toLowerCase();
-  const answerInput = document.querySelector("#answer");
-  if (userAnswer === correctAnswer) {
-    displayPopup("correctPopup");
+  const userAnswer = document.getElementById('answer').value.toLowerCase();
+  const answerInput = document.getElementById('answer');
+
+  if (userAnswer === gameData.answer.toLowerCase()) {
+    displayPopup('correctPopup');
   } else {
-    
     answerInput.value = "";
     answerInput.classList.add("game__form-wrong", "shake");
     const changeTextState = document.querySelector("#txt__wrong");
     changeTextState.classList.add("wrong__txt--disp");
     changeTextState.classList.remove("wrong__txt");
   }
-};
-
+}
 
 function nextQuestion() {
-  currentIndex++;
-  if (currentIndex >= data.length) {
-    currentIndex = 0;
-  }
-  updateContent();
-};
+  currentStep++;
+  fetchData(1, currentStep); // Remplacez 1 par l'ID de votre jeu
+
+  // Fermer le popup "Bonne réponse" après avoir chargé la nouvelle question
+  closePopup('correctPopup'); 
+}
 
 function displayPopup(popupId) {
   const popup = document.getElementById(popupId);
   if (popup) {
     popup.classList.add("show");
   }
-};
+}
 
 function closePopup(popupId) {
   const popup = document.getElementById(popupId);
   if (popup) {
     popup.classList.remove("show");
   }
-};
+}
 
-
+// ... (Gestionnaires d'événements pour les boutons) ...
 
 document.addEventListener("click", (event) => {
   if (event.target.id === "submitButton") {
     checkAnswer();
   } else if (event.target.id === "closeCorrectPopup") {
-    closePopup("correctPopup");
-    nextQuestion();
+    nextQuestion(); 
   } else if (event.target.id === "closeIncorrectPopup") {
     closePopup("incorrectPopup");
   } else if (event.target.id === "showClue") {

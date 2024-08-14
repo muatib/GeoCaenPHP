@@ -1,69 +1,83 @@
 .form-box {
-    
-    padding: 30px;
-    border-radius: 10px; 
-    
-    width: 80%; 
-    margin: 50px auto; 
-    color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  margin: 50px auto;
+  color: white;
 }
-
-
+.login-header{
+    margin-bottom: 5rem;
+}
 .form-group {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
-.form-inp{
-    margin-bottom: 1rem;
+.form-inp {
+  margin-bottom: 1rem;
 }
-.users-ttl{
-    text-align: center;
-    margin-bottom: 1.5rem;
+.users-ttl {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"],
 .form-group input[type="password-check"],
 .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-.password-hint{
-    font-size: 0.8rem;
-    color: $white;
-    font-style: italic;
-    }
+.password-hint {
+  font-size: 0.8rem;
+  color: $white;
+  font-style: italic;
+}
 
-
-.error-message, .success-message {
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 5px;
+.error-message,
+.success-message {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .error-message {
-    background-color: #f8d7da;
-    color: #721c24; 
-    border: 1px solid #f5c6cb;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
 
 .success-message {
-    background-color: #d4edda; 
-    color: #155724; 
-    border: 1px solid #c3e6cb;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
 }
-.acc-lnk{
-color: $white;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 3rem;
+.acc-lnk {
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4.5rem;
 }
+
+.login-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+   }
+.form-term{
+font-family: "RobotoCondensed";
+font-size: .8rem;
+text-align: center;
+margin-bottom: 1rem;
+}
+
+
+

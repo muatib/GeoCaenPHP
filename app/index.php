@@ -1,4 +1,3 @@
-
 <?php include 'header.php'; ?>
 
 <main>
@@ -21,7 +20,7 @@
         <img class="main__content-img2--lg" src="/img/femme_window.png" alt="enqueteur" />
         <div class="box-content main__content-txt box__style">
             <h3 class="main__content-ttl">
-                Résolvez des mystères <span class="txt__red">historiques</span> 
+                Résolvez des mystères <span class="txt__red">historiques</span>
             </h3>
             <p>
                 Mettez vos talents de détective à l'épreuve en résolvant des mystères vieux de plusieurs siècles et en démêlant des énigmes historiques disséminées dans la ville. Suivez des indices, déchiffrez des messages énigmatiques et percez les secrets du passé de Caen pour découvrir des trésors et des artefacts cachés
@@ -51,10 +50,11 @@
         <li><img class="img__itm" src="/img/abbaye.jpg" alt="" /></li>
     </ul>
 
-    <img class="main__content-img4 site__img" src="./assets/img/boy-sm.webp" alt="garçon" />
-
-    <section class="box-content box__style">
-        <p>SLIDER TEMOIGNAGE UTILISATEURS</p>
+    <!-- <img class="main__content-img4 site__img" src="./assets/img/boy-sm.webp" alt="garçon" /> -->
+<p class="slide-ttl">Témoignages de nos utilisateurs :</p>
+    <section class="box__style box-content slide-container">
+        <img class="slide-image" src="./assets/img/famille.webp" alt="Témoignage 1">
+        <p class="slide-text">"On a passé un excellent moment en famille grâce à ce jeu de piste ! On recommande !" <br> - La famille Dubois</p>
     </section>
 
     <section class="news">
@@ -65,19 +65,22 @@
             </h2>
             <img class="main__content-img9" src="./assets/img/livreur-de-journaux-sm.webp" alt="livreur de journaux" />
         </div>
+        <p class="news-txt">(cliquez sur les images pour accéder aux articles)</p>
         <div class="box-content box__style">
-            <img class="news-img" src="./assets/img/memorial-britannique-ver-sur-mer.webp" alt="" />
+            <a href="https://www.caenlamer-tourisme.fr/temps-fort/les-boreales/"><img class="news-img" src="./assets/img//borealis.webp" alt="" /></a>
             <p>
-                80e <span class="txt__blue">D</span>-<span class="txt__red">Day</span>. La cérémonie binationale franco-britannique se tiendra le 6 juin 2024 à 10 h 30.
+                Les <span class="txt__blue">boréales</span>
             </p>
             <br />
+            <p>Du 21 nov. au 30 nov. <span class="txt__red">2024</span></p>
+            <br>
             <p>
-                Après la cérémonie internationale en 2023, le <span class="txt__blue">Mémorial</span> britannique de Ver-sur-Mer accueillera la cérémonie binationale franco-britannique le <span class="txt__red"> 6 juin 2024</span>.<br />Source : MARC OLLIVIER/ARCHIVES OUEST-FRANCE
+                Le festival s’est imposé comme le plus grand événement dédié à la culture nordique en Europe. Chaque année au mois de novembre, il vous fera voyager à travers différents territoires. Les cinq pays scandinaves, les pays baltiques, le Groenland et les îles Féroé y dévoilent toutes leurs richesses.
             </p>
         </div>
 
         <div class="box-content box__style">
-            <img class="news-img" src="./assets/img/millenaire caen.webp" alt="" />
+            <a href="https://www.millenairecaen2025.fr/fr/news/la-parade-du-millenaire-se-prepare"><img class="news-img" src="./assets/img/millenaire caen.webp" alt="millenaire caen" /></a>
             <p>
                 <span class="txt__blue">Millénaire</span> de <span class="txt__red">caen</span> : Une parade titanesque se prépare dans le plus grand secret.
             </p>
@@ -90,4 +93,4 @@
     </section>
 </main>
 
-<?php include 'footer.php'; ?> 
+<?php include 'footer.php'; ?>

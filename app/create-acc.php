@@ -145,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="description">Présentez vous en quelques mots:</label>
                     <textarea id="description" name="description"><?php echo htmlspecialchars($description); ?></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-term">
                     <input type="checkbox" id="accept-terms" name="accept-terms" required>
                     <label for="accept-terms">J'accepte les <a href="#" target="_blank">conditions d'utilisation</a> et le <a href="#" target="_blank">traitement des données</a>.</label>
                 </div>

@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <header class="header-container">
+    <header class="header-container login-header">
         <img
             class="header__img"
             src="./assets/img/Yellow_Simple_Depop_Profile_Picture-removebg-preview.webp"
@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </section>
 <a class="acc-lnk" href="create-acc.php">Créer un compte</a>
     </main>
-    <footer class="footer">
+    <footer class="footer login-footer">
         <div class="footer__txt">
             <p>infos contact</p>
             <p>Suivez notre actualité :</p>

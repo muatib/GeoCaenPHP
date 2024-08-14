@@ -1,4 +1,3 @@
-
 .main__content-ttl {
   margin: 0 0 1.5rem 0;
 }
@@ -28,8 +27,8 @@
   left: 2rem;
   margin-top: 0.5rem;
 }
-.main__content-img9{
-  margin-bottom: 1rem;
+.main__content-img9 {
+  margin: 2rem;
 }
 .img__itm {
   width: 15rem;
@@ -42,42 +41,41 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  
-  
+
   margin: 8rem 2.5rem 8rem 3.5rem;
   width: 90%;
-  
 }
 .news__content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  // margin-bottom: 3rem;
 }
 .news__content-ttl {
   margin: 1rem;
 }
 .main__content-img5 {
   left: 8rem;
+  margin-bottom: 2rem;
 }
 .box-content {
   margin-bottom: 4rem;
 }
 .news-img {
   width: 110%;
-  margin: -1rem 0 1rem 0;
+  position: relative;
+  right: 5%;
+  margin-top: -1rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   border-bottom: $clear-blue 2px solid;
   height: 6rem;
 }
 
-
 @media screen and (max-width: 899px) {
   .main__content-img1--lg,
   .main__content-img2--lg,
-   .top__img,
-   .img__container {
+  .top__img,
+  .img__container {
     display: none;
   }
 }
@@ -92,8 +90,7 @@
     left: 2%;
   }
   .main__content-img3,
-  .main__content-img4
-   {
+  .main__content-img4 {
     display: none;
   }
 }
@@ -126,4 +123,69 @@
     margin-bottom: -2.5rem;
     margin-top: 3rem;
   }
+}
+.news-txt {
+  font-family: "RobotoCondensed";
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+// .slider-container{
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+
+//   margin-top: 4rem;
+//   // padding: 1rem;
+//   // max-height: 200px;
+
+// }
+// .slider-img{
+//   height: 150px;
+// }
+// .slider-container {
+//   overflow: hidden; /* Cache les slides qui débordent */
+// }
+
+// .slider {
+//   // display: flex;
+//   transition: transform 0.5s ease-in-out; /* Ajoute une transition fluide */
+// }
+
+// .slide-txt{
+//   text-align: left;
+
+// }
+
+.slide-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.slide-text {
+  // width: 70%;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+  display: flex;
+}
+
+.slide-image {
+  // width: 30%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.slide-ttl {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 3rem;
+  font-weight: bold;
 }

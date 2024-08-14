@@ -1,4 +1,3 @@
-
 .game1-logo {
   filter: drop-shadow($gold 1px 1px 1px);
   display: block;
@@ -6,20 +5,19 @@
 }
 .game1-ttl {
   text-align: center;
- margin: 2rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
   color: $gold;
   filter: drop-shadow(black 2px 2px);
+  font-size: 1.7rem;
 }
-
 
 .game1__img2 {
   bottom: 8rem;
   left: 15rem;
-  
 }
-.game1-img1{
+.game1-img1 {
   left: 1.5rem;
-  top: 0.8rem;
+  bottom: 1rem;
 }
 .game1-txt {
   margin-bottom: -4rem;
@@ -34,4 +32,8 @@
   border-top-right-radius: 0.5rem;
   border-top: $blue-shadow 2px solid;
   margin-top: 1rem;
+}
+
+.game-btn {
+  margin-bottom: 3rem;
 }

@@ -51,21 +51,11 @@
     </ul>
 
     <!-- <img class="main__content-img4 site__img" src="./assets/img/boy-sm.webp" alt="garçon" /> -->
-    <p class="slide-ttl">Témoignages de nos utilisateurs :</p>
-    <section class="testimonial-slider">
-    <div class="box__style box-content slide-container">
+<p class="slide-ttl">Témoignages de nos utilisateurs :</p>
+    <section class="box__style box-content slide-container">
         <img class="slide-image" src="./assets/img/famille.webp" alt="Témoignage 1">
-        <p class="slide-text">"On a passé un excellent moment en famille grâce à ce jeu de piste ! C'est une activité originale et enrichissante, on recommande !" <br> - La famille Dubois</p>
-    </div>
-    <div class="box__style box-content slide-container">
-        <img class="slide-image" src="./assets/img//femme-portable.webp" alt="Témoignage 2">
-        <p class="slide-text">"J'ai adoré cette façon ludique de découvrir Caen ! J'ai appris plein de choses sur l'histoire de la ville sans m'en rendre compte. !" <br> - Élise, 25 ans</p>
-    </div>
-    <div class="box__style box-content slide-container">
-        <img class="slide-image" src="./assets/img//homme-age.webp" alt="Témoignage 3">
-        <p class="slide-text">"J'ai redécouvert ma ville avec plaisir grâce à ce jeu d'énigmes. Une belle initiative pour valoriser le patrimoine caennais !" <br> - Henry, 64 ans</p>
-    </div>
-</section>
+        <p class="slide-text">"On a passé un excellent moment en famille grâce à ce jeu de piste ! On recommande !" <br> - La famille Dubois</p>
+    </section>
 
     <section class="news">
         <div class="news__content">

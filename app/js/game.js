@@ -72,3 +72,20 @@ function checkAnswer() {
     changeTextState.classList.remove("wrong__txt");
   }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  let slides = document.querySelectorAll('.slide-container');
+  let currentSlide = 0;
+
+  function showNextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+  }
+
+  // Initialiser le premier slide comme actif
+  slides[0].classList.add('active');
+
+  // Changer de slide toutes les 5 secondes
+  setInterval(showNextSlide, 5000);
+});

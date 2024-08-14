@@ -1,0 +1,36 @@
+{
+  "assets/font/Roboto-Regular.ttf": {
+    "file": "assets/Roboto-Regular-BHeBnKzs.ttf",
+    "src": "assets/font/Roboto-Regular.ttf"
+  },
+  "js/burger.js": {
+    "file": "assets/burger-CyzUtZ6A.js",
+    "name": "burger",
+    "src": "js/burger.js",
+    "isEntry": true
+  },
+  "js/game.js": {
+    "file": "assets/game-q5HS8-2_.js",
+    "name": "game",
+    "src": "js/game.js",
+    "isEntry": true
+  },
+  "js/lore.js": {
+    "file": "assets/lore-CbMfCckT.js",
+    "name": "lore",
+    "src": "js/lore.js",
+    "isEntry": true
+  },
+  "js/main.js": {
+    "file": "assets/main-CdOluoUH.js",
+    "name": "main",
+    "src": "js/main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main-CSqShf7r.css"
+    ],
+    "assets": [
+      "assets/Roboto-Regular-BHeBnKzs.ttf"
+    ]
+  }
+}

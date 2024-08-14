@@ -1,9 +1,8 @@
 
 .game1-logo {
   filter: drop-shadow($gold 1px 1px 1px);
-  position: relative;
-  top: -3rem;
-  left: 9rem;
+  display: block;
+  margin: 2rem auto;
 }
 .game1-ttl {
   text-align: center;

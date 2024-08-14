@@ -1,10 +1,39 @@
-let gameData = {};
-let currentStep = 1; // Commencez à l'étape 1
 
 
+function displayPopup(popupId) {
+  const popup = document.getElementById(popupId);
+  if (popup) {
+    popup.classList.add("show");
+  }
+}
+
+function closePopup(popupId) {
+  const popup = document.getElementById(popupId);
+  if (popup) {
+    popup.classList.remove("show");
+  }
+}
+
+
+
+document.addEventListener("click", (event) => {
+  if (event.target.id === "submitButton") {
+    checkAnswer();
+  } else if (event.target.id === "closeCorrectPopup") {
+    nextQuestion(); 
+  } else if (event.target.id === "closeIncorrectPopup") {
+    closePopup("incorrectPopup");
+  } else if (event.target.id === "showClue") {
+    displayPopup("popup");
+  } else if (event.target.closest("#popup .link")) {
+    closePopup("popup");
+  } else if (event.target.closest("#popupk .link:first-child")) {
+    closePopup("popupk");
+  }
+});
 
 function init() {
-  currentIndex = 0; // Assurez-vous que currentIndex est initialisé
+  currentIndex = 0; 
   
   if (localStorage.getItem("currentIndex")) {
     currentIndex = parseInt(localStorage.getItem("currentIndex"));
@@ -16,7 +45,6 @@ function init() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", init);
 
 function updateContent() {
   if (gameData) {
@@ -44,54 +72,3 @@ function checkAnswer() {
     changeTextState.classList.remove("wrong__txt");
   }
 }
-
-function nextQuestion() {
-  currentStep++;
-  fetchData(1, currentStep); // Remplacez 1 par l'ID de votre jeu
-
-  // Fermer le popup "Bonne réponse" après avoir chargé la nouvelle question
-  closePopup('correctPopup'); 
-}
-
-function displayPopup(popupId) {
-  const popup = document.getElementById(popupId);
-  if (popup) {
-    popup.classList.add("show");
-  }
-}
-
-function closePopup(popupId) {
-  const popup = document.getElementById(popupId);
-  if (popup) {
-    popup.classList.remove("show");
-  }
-}
-
-// ... (Gestionnaires d'événements pour les boutons) ...
-
-document.addEventListener("click", (event) => {
-  if (event.target.id === "submitButton") {
-    checkAnswer();
-  } else if (event.target.id === "closeCorrectPopup") {
-    nextQuestion(); 
-  } else if (event.target.id === "closeIncorrectPopup") {
-    closePopup("incorrectPopup");
-  } else if (event.target.id === "showClue") {
-    displayPopup("popup");
-  } else if (event.target.closest("#popup .link")) {
-    closePopup("popup");
-  } else if (event.target.closest("#popupk .link:first-child")) {
-    closePopup("popupk");
-  }
-});
-
-window.onbeforeunload = () => {
-  localStorage.setItem("currentIndex", currentIndex);
-};
-
-window.onload = () => {
-  if (localStorage.getItem("currentIndex")) {
-    currentIndex = parseInt(localStorage.getItem("currentIndex"));
-  }
-  updateContent();
-};

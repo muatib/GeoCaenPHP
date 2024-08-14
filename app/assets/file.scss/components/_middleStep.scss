@@ -2,6 +2,11 @@
   left: 9.5rem;
   margin-bottom: 1rem;
 }
+.middle-logo{
+  display: block;
+  margin: 2rem auto;
+  
+}
 .middle__game-footer {
   background-color: $trans-blue;
   display: flex;
@@ -9,9 +14,7 @@
   align-items: center;
   padding: 1rem;
   border-top: $blue-shadow 2px solid;
-
   margin-bottom: -3rem;
-
   position: absolute;
   bottom: 0;
   width: 100%;

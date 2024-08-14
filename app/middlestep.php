@@ -14,7 +14,7 @@
         src="./assets/img/guillaume-le-conquerant_1024x.webp"
         alt=""
       />
-      <img class="game1__logo" src="./assets/img/Geo-removebg-preview.webp" alt="" />
+      <img class="middle-logo" src="./assets/img//logo geocaen.png" alt="" />
     </header>
     <main>
       <div>

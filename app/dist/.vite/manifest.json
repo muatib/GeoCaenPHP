@@ -3,6 +3,38 @@
     "file": "assets/Roboto-Regular-BHeBnKzs.ttf",
     "src": "assets/font/Roboto-Regular.ttf"
   },
+  "assets/img/borealis.webp": {
+    "file": "assets/borealis-YWYyUa45.webp",
+    "src": "assets/img/borealis.webp"
+  },
+  "assets/img/detective window.png": {
+    "file": "assets/detective window-BU1mF9Li.png",
+    "src": "assets/img/detective window.png"
+  },
+  "assets/img/famille.webp": {
+    "file": "assets/famille-VBHaw7mK.webp",
+    "src": "assets/img/famille.webp"
+  },
+  "assets/img/femme-portable.webp": {
+    "file": "assets/femme-portable-CtYtfOlh.webp",
+    "src": "assets/img/femme-portable.webp"
+  },
+  "assets/img/homme-age.webp": {
+    "file": "assets/homme-age-DEpcaWVu.webp",
+    "src": "assets/img/homme-age.webp"
+  },
+  "assets/img/livreur-de-journaux-sm.webp": {
+    "file": "assets/livreur-de-journaux-sm-CcPYGn5J.webp",
+    "src": "assets/img/livreur-de-journaux-sm.webp"
+  },
+  "assets/img/millenaire caen.webp": {
+    "file": "assets/millenaire caen-D_IwimU0.webp",
+    "src": "assets/img/millenaire caen.webp"
+  },
+  "assets/img/shadow.png.png": {
+    "file": "assets/shadow.png-Z0KjNbMD.png",
+    "src": "assets/img/shadow.png.png"
+  },
   "js/burger.js": {
     "file": "assets/burger-CyzUtZ6A.js",
     "name": "burger",

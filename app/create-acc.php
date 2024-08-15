@@ -8,7 +8,6 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-// Déclaration des variables
 $firstname = $pseudo = $lastname = $email = $password = $avatar = $description = "";
 $loginErrors = [];
 $registerErrors = [];

@@ -23,7 +23,7 @@
                 <li><a class="nav__lnk" href="index.php">Accueil</a></li>
                 <li><a class="nav__lnk" href="game.php">Jeux</a></li>
                 <li><a class="nav__lnk" href="#">A propos de GeoCaen</a></li>
-                <li><a class="nav__lnk" href="#">Nous contacter</a></li>
+                <li><a class="nav__lnk" href="contact.php">Nous contacter</a></li>
             </ul>
         </div>
 
@@ -40,7 +40,7 @@
                     <a class="menu__container-lnk" href="#">A propos de GeoCaen</a>
                 </li>
                 <li class="menu__container-itm">
-                    <a class="menu__container-lnk" href="#">Nous contacter</a>
+                    <a class="menu__container-lnk" href="contact.php">Nous contacter</a>
                 </li>
             </ul>
         </nav>

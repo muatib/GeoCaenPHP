@@ -10,7 +10,7 @@
     "isEntry": true
   },
   "js/game.js": {
-    "file": "assets/game-q5HS8-2_.js",
+    "file": "assets/game-C8JPEyAJ.js",
     "name": "game",
     "src": "js/game.js",
     "isEntry": true
@@ -22,12 +22,12 @@
     "isEntry": true
   },
   "js/main.js": {
-    "file": "assets/main-CdOluoUH.js",
+    "file": "assets/main-B4Ys-5hV.js",
     "name": "main",
     "src": "js/main.js",
     "isEntry": true,
     "css": [
-      "assets/main-CSqShf7r.css"
+      "assets/main-Cbq3kwhU.css"
     ],
     "assets": [
       "assets/Roboto-Regular-BHeBnKzs.ttf"

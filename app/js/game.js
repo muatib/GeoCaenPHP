@@ -51,7 +51,6 @@ function updateContent() {
     document.getElementById('game1__txt').textContent = gameData.question;
     document.getElementById('clue').textContent = gameData.clue;
 
-    // Réinitialiser l'affichage en cas de nouvelle question
     document.getElementById('answer').value = '';
     document.getElementById('txt__wrong').classList.remove('wrong__txt--disp');
     document.getElementById('answer').classList.remove('game__form-wrong', 'shake');
@@ -83,9 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       slides[currentSlide].classList.add('active');
   }
 
-  // Initialiser le premier slide comme actif
   slides[0].classList.add('active');
 
-  // Changer de slide toutes les 5 secondes
   setInterval(showNextSlide, 5000);
 });

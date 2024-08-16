@@ -1,9 +1,6 @@
 <?php
 include 'contact-traitment.php';
 include 'functions.php';
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -52,22 +49,24 @@ include 'functions.php';
         </nav>
     </header>
 
-    <h1>Formulaire de contact</h1>
+    <h1 class="game1-ttl">Formulaire de contact</h1>
 
-    <form action="contact-traitment.php" method="post">
-        <label for="name">Nom</label>&ensp;&emsp;
-        <input type="text" name="name" id="name" required>
-        <label for="email">Email</label>&ensp;&emsp;
-        <input type="email" name="email" id="email" required>
-        <label for="message">Votre message</label>
-        <textarea name="message" id="message" required></textarea>
-        <button>Envoyer</button>
-    </form>
-    <?php if (isset($_SESSION['message'])) {
+    <form class="form-container" action="contact-traitment.php" method="post">
+        <label class="contact-label" for="name">Nom</label>&ensp;&emsp;
+        <input class="contact-input" type="text" name="name" id="name" placeholder="Votre nom" required>
+        <label class="contact-label" for="email">Email</label>&ensp;&emsp;
+        <input class="contact-input"  type="email" name="email" id="email" placeholder="Votre adresse mail" required>
+        <label class="message-label" for="message">Votre message</label>
+        <textarea class="message-input"  name="message" id="message" placeholder="Tapez votre message ici" required></textarea>
+        <button class="btn contact-btn">Envoyer</button>
+
+        <?php if (isset($_SESSION['message'])) {
         echo '<div class="message">' . $_SESSION['message'] . '</div>';
         unset($_SESSION['message']);
     }
     ?>
+    </form>
+    
     <footer class="footer">
         <div class="footer__txt">
             <p>infos contact</p>

@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a class="menu__container-lnk" href="#">A propos de GeoCaen</a>
                 </li>
                 <li class="menu__container-itm">
-                    <a class="menu__container-lnk" href="#">Nous contacter</a>
+                    <a class="menu__container-lnk" href="contact.php">Nous contacter</a>
                 </li>
             </ul>
         </nav>

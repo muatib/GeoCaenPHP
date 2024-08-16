@@ -15,10 +15,7 @@
       class="header__img"
       src="./assets/img/Yellow_Simple_Depop_Profile_Picture-removebg-preview.webp"
       alt="enqueteur" />
-    <img
-      class="header__logo main__img"
-      src="./assets/img/logo geocaen.png"
-      alt="logo GeoCaen" />
+      <a class="header__logo site__img" href="index.php"><img  src="./assets/img/logo geocaen.png" alt="logo GeoCaen" /></a>
       <a class="header-user-img" href="login.php"><img  src="./assets/img//icons8-compte-48.webp" alt="logo compte"></a>
 
     <div class="menu__toggle" id="burger__menu">
@@ -34,7 +31,7 @@
           <a class="menu__container-lnk" href="#">A propos de GeoCaen</a>
         </li>
         <li class="menu__container-itm">
-          <a class="menu__container-lnk" href="#">Nous contacter</a>
+          <a class="menu__container-lnk" href="contact.php">Nous contacter</a>
         </li>
       </ul>
     </nav>

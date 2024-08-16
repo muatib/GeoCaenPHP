@@ -1,20 +1,9 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = $_POST['nom'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+include 'contact-traitment.php';
+include 'functions.php';
 
-    $to = "vincdubois14@gmail.com"; // Remplacez par votre adresse e-mail
-    $subject = "Nouveau message de votre site web";
-    $body = "Nom: $nom\nEmail: $email\n\nMessage:\n$message";
-    $headers = "From: $email";
 
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Message envoyé avec succès !";
-    } else {
-        echo "Erreur lors de l'envoi du message.";
-    }
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <header class="header-container">
         <img class="header__img" src="./assets/img/Yellow_Simple_Depop_Profile_Picture-removebg-preview.webp" alt="enqueteur" />
-        <img class="header__logo site__img" src="./assets/img/logo geocaen.png" alt="logo GeoCaen" />
+        <a class="header__logo site__img" href="index.php"><img  src="./assets/img/logo geocaen.png" alt="logo GeoCaen" /></a>
         <a class="header-user-img" href="login.php"><img src="./assets/img//icons8-compte-48.webp" alt="logo compte"></a>
         <div class="nav__lg">
             <ul class="nav__lg-lst">
@@ -58,30 +47,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li class="menu__container-itm">
                     <a class="menu__container-lnk" href="#">A propos de GeoCaen</a>
                 </li>
-                <li class="menu__container-itm">
-                    <a class="menu__container-lnk" href="contact.php">Nous contacter</a>
-                </li>
+                
             </ul>
         </nav>
     </header>
 
     <h1>Formulaire de contact</h1>
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <label for="nom">Nom:</label><br>
-        <input type="text" id="nom" name="nom" required><br>
-
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" 
- required><br>
-
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" required></textarea><br><br>
-
-        <input type="submit" value="Envoyer"> 
-
+    <form action="contact-traitment.php" method="post">
+        <label for="name">Nom</label>&ensp;&emsp;
+        <input type="text" name="name" id="name" required>
+        <label for="email">Email</label>&ensp;&emsp;
+        <input type="email" name="email" id="email" required>
+        <label for="message">Votre message</label>
+        <textarea name="message" id="message" required></textarea>
+        <button>Envoyer</button>
     </form>
-
+    <?php if (isset($_SESSION['message'])) {
+        echo '<div class="message">' . $_SESSION['message'] . '</div>';
+        unset($_SESSION['message']);
+    }
+    ?>
     <footer class="footer">
         <div class="footer__txt">
             <p>infos contact</p>

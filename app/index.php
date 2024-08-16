@@ -50,7 +50,6 @@
         <li><img class="img__itm" src="/img/abbaye.jpg" alt="" /></li>
     </ul>
 
-    <!-- <img class="main__content-img4 site__img" src="./assets/img/boy-sm.webp" alt="garçon" /> -->
     <p class="slide-ttl">Témoignages de nos utilisateurs :</p>
     <section class="testimonial-slider">
     <div class="box__style box-content slide-container">

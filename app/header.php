@@ -16,7 +16,7 @@
 <body>
     <header class="header-container">
         <img class="header__img" src="./assets/img/Yellow_Simple_Depop_Profile_Picture-removebg-preview.webp" alt="enqueteur" />
-        <img class="header__logo site__img" src="./assets/img/logo geocaen.png" alt="logo GeoCaen" />
+        <a class="header__logo site__img" href="index.php"><img  src="./assets/img/logo geocaen.png" alt="logo GeoCaen" /></a>
         <a class="header-user-img" href="login.php"><img  src="./assets/img//icons8-compte-48.webp" alt="logo compte"></a>
         <div class="nav__lg">
             <ul class="nav__lg-lst">

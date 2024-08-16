@@ -62,11 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             class="header__img"
             src="./assets/img/Yellow_Simple_Depop_Profile_Picture-removebg-preview.webp"
             alt="enqueteur" />
-        <img
-            class="header__logo site__img"
-            src="./assets/img/logo geocaen.png"
-            alt="logo GeoCaen" />
-            <a class="header-user-img" href="login.php"><img  src="./assets/img//icons8-compte-48.webp" alt="logo compte"></a>
+        <a class="header__logo site__img" href="index.php"><img src="./assets/img/logo geocaen.png" alt="logo GeoCaen" /></a>
+        <a class="header-user-img" href="login.php"><img src="./assets/img//icons8-compte-48.webp" alt="logo compte"></a>
         <div class="nav__lg">
             <ul class="nav__lg-lst">
                 <li><a class="nav__lnk" href=""></a>Acceuil</li>
@@ -122,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" name="login_submit" class="btn ">S'identifier</button>
             </form>
         </section>
-<a class="acc-lnk" href="create-acc.php">Créer un compte</a>
+        <a class="acc-lnk" href="create-acc.php">Créer un compte</a>
     </main>
     <footer class="footer login-footer">
         <div class="footer__txt">

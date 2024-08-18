@@ -2,11 +2,13 @@
 session_start();
 require __DIR__ . '/vendor/autoload.php';
 include 'functions.php';
+include 'account-traitment.php';
 
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
+
 
 $firstname = $pseudo = $lastname = $email = $password = $avatar = $description = "";
 $loginErrors = [];
@@ -40,8 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-term">
                     <input type="checkbox" id="accept-terms" name="accept-terms" required>
-                    <label for="accept-terms">J'accepte les <a href="#" target="_blank">conditions d'utilisation</a> et le <a href="#" target="_blank">traitement des données</a>.</label>
+                    <label for="accept-terms">J'accepte les <a class="trem-lnk" href="#" target="_blank">conditions d'utilisation</a></label>
                 </div>
                 <button type="submit" name="register_submit" class="btn">Créer le compte</button>
             </form>

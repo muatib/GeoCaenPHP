@@ -2,48 +2,14 @@
 session_start();
 require __DIR__ . '/vendor/autoload.php';
 include 'functions.php';
+include 'login-traitment.php';
 
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-
-$firstname = $pseudo = $lastname = $email = $password = $avatar = $description = "";
-$loginErrors = [];
-$registerErrors = [];
-$registerSuccess = false;
-
-if (!isset($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = generateCSRFToken();
-}
-$csrfToken = $_SESSION['csrf_token'];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-        die("Erreur CSRF détectée.");
-    }
-
-    if (isset($_POST['register_submit'])) {
-        $firstname = $_POST['firstname'] ?? '';
-        $pseudo = $_POST['pseudo'] ?? '';
-        $lastname = $_POST['lastname'] ?? '';
-        $email = $_POST['email'] ?? '';
-        $password = $_POST['password'] ?? '';
-        $description = $_POST['description'] ?? '';
-        $avatar = $_FILES['avatar'] ?? null;
-
-        handleRegistration($firstname, $pseudo, $lastname, $email, $password, $avatar, $description);
-    } elseif (isset($_POST['login_submit'])) {
-        $email = $_POST['email'] ?? '';
-        $password = $_POST['password'] ?? '';
-        handleLogin($email, $password);
-    }
-}
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -88,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a class="menu__container-lnk" href="#">A propos de GeoCaen</a>
                 </li>
                 <li class="menu__container-itm">
-                    <a class="menu__container-lnk" href="#">Nous contacter</a>
+                    <a class="menu__container-lnk" href="contact.php">Nous contacter</a>
                 </li>
             </ul>
         </nav>
@@ -119,7 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" name="login_submit" class="btn ">S'identifier</button>
             </form>
         </section>
-        <a class="acc-lnk" href="create-acc.php">Créer un compte</a>
+        <p class="login-txt">Vous n'avez pas de compte ? :</p>
+        <a class="acc-lnk" href="create.acc.php">Créer un compte</a>
     </main>
     <footer class="footer login-footer">
         <div class="footer__txt">

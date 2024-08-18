@@ -21,6 +21,7 @@
     <script  src="./js/burger.js"></script>
     <script  src="./js/main.js"></script>
     <script src="./js/game.js"></script>
+    <script src="./js/slide.js"></script>
    
     
 </body>

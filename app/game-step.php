@@ -2,6 +2,7 @@
 
 
 include 'functions.php';
+include 'game-traitment.php';
 
 session_start();
 
@@ -13,6 +14,11 @@ if (!isset($_SESSION['currentStep'])) {
 }
 
 $gameData = handleGameStep($_POST);
+if (!$gameData['stepData'] && isset($_SESSION['currentStep']) && $_SESSION['currentStep'] > 1) {
+  header("Location: end-game.php"); 
+  exit();
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -58,9 +64,10 @@ $gameData = handleGameStep($_POST);
         <img class="site__img pop__img" src="./assets/img/detective_interroge-removebg-preview.webp" alt="" />
         <button class="pop__btn btn" id="closeIncorrectPopup">Fermer</button>
       </div>
-    <?php else: ?>
-      <p>Erreur : Impossible de charger les données de l'étape. Veuillez contacter l'administrateur.</p>
-    <?php endif; ?>
+      <?php else: ?>
+            <p>Erreur : Impossible de charger les données de l'étape. Veuillez contacter l'administrateur.</p>
+        <?php endif; ?>
+    
   </main>
   <footer class="game__footer">
     <button class="game__btn" id="home-button" onclick="displayPopup('popupk')">accueil</button>

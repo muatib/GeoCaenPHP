@@ -1,6 +1,7 @@
 <?php
 include 'contact-traitment.php';
 include 'functions.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +58,7 @@ include 'functions.php';
         <label class="contact-label" for="email">Email</label>&ensp;&emsp;
         <input class="contact-input"  type="email" name="email" id="email" placeholder="Votre adresse mail" required>
         <label class="message-label" for="message">Votre message</label>
-        <textarea class="message-input"  name="message" id="message" placeholder="Tapez votre message ici" required></textarea>
+        <textarea class="message-input"  name="message" id="message" placeholder="Entrez votre message ici" required></textarea>
         <button class="btn contact-btn">Envoyer</button>
 
         <?php if (isset($_SESSION['message'])) {

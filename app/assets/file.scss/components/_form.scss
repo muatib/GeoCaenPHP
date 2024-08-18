@@ -5,8 +5,8 @@
   margin: 50px auto;
   color: white;
 }
-.login-header{
-    margin-bottom: 5rem;
+.login-header {
+  margin-bottom: 5rem;
 }
 .form-group {
   margin-bottom: 1.5rem;
@@ -64,20 +64,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4.5rem;
+  margin-top: 2rem;
 }
 
 .login-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-   }
-.form-term{
-font-family: "RobotoCondensed";
-font-size: .8rem;
-text-align: center;
-margin-bottom: 1rem;
 }
+.form-term {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: "RobotoCondensed";
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+ }
+ .term-lnk{
+  color: white;
+ }
 
-
-
+.login-txt {
+  font-family: "RobotoCondensed";
+  font-weight: bold;
+  text-align: center;
+}

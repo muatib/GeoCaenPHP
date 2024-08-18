@@ -11,16 +11,17 @@
   margin-bottom: 2.5rem;
   text-align: center;
   border: black 2px solid;
+  padding: 2rem;
 }
 
 .game__form-wrong {
-  width: 85%;
+  width: 90%;
   height: 5rem;
   border-radius: 1rem;
-  margin: -1rem 0 3rem 0;
+  margin: -1rem 2rem 3rem 0;
   text-align: center;
   border: $red 4px solid;
-  background-image: url(/img/warning-1-svgrepo-com.svg);
+  background-image: url(/app/assets/img/warning-1-svgrepo-com.svg);
   background-repeat: no-repeat;
   background-size: 3rem;
   background-position: 8%;
@@ -54,20 +55,18 @@
   background: $background;
   padding: 0.2rem;
   color: $red;
-  width: fit-content;
   position: relative;
   bottom: 1rem;
   right: 15rem;
 }
 .wrong__txt--disp {
-  text-align: center;
-  background: $background;
   padding: 0.2rem;
   color: $red;
-  width: fit-content;
   position: relative;
   bottom: 1rem;
-  left: 5.5rem;
+  right: .1rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 .popup {
@@ -110,6 +109,7 @@
   color: #fff;
   margin-bottom: 1rem;
   text-align: center;
+  // margin-bottom: 4rem;
 }
 
 .popupk__container {
@@ -128,16 +128,15 @@
 }
 .popupk__img {
   position: relative;
-  left: 3.5rem;
+
   top: 1.5rem;
 }
 .pop-img {
-  left: 9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .game__form-btn {
   margin-bottom: 5rem;
 }
-.question-img{
+.question-img {
   margin-top: 2rem;
 }

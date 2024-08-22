@@ -13,12 +13,12 @@
 .txt__red {
   
   font-weight: 800;
-  filter: drop-shadow($red 2px 2px);
+  filter: drop-shadow($red 1px 1px);
 }
 .txt__blue {
   
   font-weight: 800;
-  filter: drop-shadow($clear-blue 2px 2px);
+  filter: drop-shadow($blue-shadow 1px 1px);
 }
 .txt__gold {
   
@@ -87,4 +87,11 @@
 .box-content {
   margin-bottom: 4rem;
   width: 90%
+}
+.end-txt{
+margin-top: 5rem;
+margin-bottom: 4rem;
+}
+.end-btn{
+  margin-bottom: 4rem;
 }

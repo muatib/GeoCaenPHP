@@ -1,7 +1,5 @@
-<?php include 'header.php'; 
+<?php include './includes/_header.php';?> 
 
-
-?>
 
 <main>
     <img class="top__img" src="./assets/img/shadow.png.png" alt="ombre" />
@@ -110,4 +108,4 @@
     </section>
 </main>
 
-<?php include 'footer.php'; ?>
+<?php include './includes/_footer.php'; ?>

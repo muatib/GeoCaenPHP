@@ -58,4 +58,4 @@
     <a class="link" href="game-step.php"><button class="btn game-btn">Lancez l'enquête !</button></a>
   </main>
 
-  <?php include 'footer.php'; ?>
+  <?php include './includes/_footer.php'; ?>

@@ -1,8 +1,16 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php'; 
 
-include 'functions.php';
-include 'game-traitment.php';
+use Dotenv\Dotenv;
+
+
+$dotenv = Dotenv::createImmutable(__DIR__); 
+$dotenv->load();
+
+include './includes/_functions.php';
+include './includes/_database.php';
+include './includes/_game-traitment.php';
 
 session_start();
 

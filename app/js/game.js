@@ -1,5 +1,12 @@
 
 
+/**
+ * Displays a popup by adding the "show" CSS class.
+ *
+ * @param {string} popupId - The HTML id of the popup element to display.
+ *
+ * @returns {void}
+ */
 function displayPopup(popupId) {
   const popup = document.getElementById(popupId);
   if (popup) {
@@ -7,6 +14,12 @@ function displayPopup(popupId) {
   }
 }
 
+/**
+ * Closes a popup by removing the "show" CSS class.
+ *
+ * @param {string} popupId - The HTML id of the popup element to close.
+ * @returns {void}
+ */
 function closePopup(popupId) {
   const popup = document.getElementById(popupId);
   if (popup) {
@@ -15,15 +28,23 @@ function closePopup(popupId) {
 }
 
 
+/**
+ * Applies visual feedback for a wrong answer.
+ * 
+ * @returns {void}
+ */
 function handleWrongAnswer() {
   const answerInput = document.getElementById("answer");
   answerInput.classList.add("game__form-wrong", "shake");
-
+  
   setTimeout(function() {
-      answerInput.classList.remove("shake");
-  }, 500); 
+    answerInput.classList.remove("shake");
+  }, 500);
 }
 
+/**
+ * Checks for an error message and triggers wrong answer handling if present.
+ */
 const errorMessage = document.getElementById("txt__wrong").textContent.trim();
 if (errorMessage !== "") {
   handleWrongAnswer();
@@ -32,20 +53,31 @@ if (errorMessage !== "") {
 
 
 
+/**
+ * Resets the user session and redirects to the home page.
+ * 
+ * @returns {void}
+ * 
+ * This function performs the following actions:
+ * 1. Clears all data stored in sessionStorage and localStorage.
+ * 2. Sends a POST request to 'reset_session.php' to reset the PHP session.
+ * 3. If the request is successful, redirects the user to 'index.php'.
+ * 4. If an error occurs, logs it to the console.
+ */
 function resetSession() {
-  // Effacer les données de session stockées dans le navigateur
+  // Clear browser-stored session data
   sessionStorage.clear();
   localStorage.clear();
 
-  // Envoyer une requête au serveur pour réinitialiser la session PHP
+  // Send request to reset PHP session
   fetch('reset_session.php', {
       method: 'POST',
   }).then(response => {
       if (response.ok) {
-          // Rediriger vers la page d'accueil
+          // Redirect to home page
           window.location.href = 'index.php';
       } else {
-          console.error('Erreur lors de la réinitialisation de la session');
+          console.error('Error resetting session');
       }
   });
 }

@@ -63,7 +63,7 @@
       alt="famille detective" />
   </main>
 
- <?php include 'footer.php'; ?>
+ <?php include './includes/_footer.php'; ?>
 
   <script src="./js/main.js"></script>
   <script src="./js/burger.js"></script>

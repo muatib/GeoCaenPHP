@@ -1,13 +1,18 @@
 <?php
-session_start();
-require __DIR__ . '/vendor/autoload.php';
-include 'functions.php';
-include 'login-traitment.php';
+require __DIR__ . '/vendor/autoload.php'; 
 
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(__DIR__);
+
+$dotenv = Dotenv::createImmutable(__DIR__); 
 $dotenv->load();
+
+session_start();
+require __DIR__ . '/vendor/autoload.php';
+include './includes/_database.php';
+include './includes/_functions.php';
+include './includes/_login-traitment.php';
+
 
 ?>
 <!DOCTYPE html>
@@ -86,28 +91,9 @@ $dotenv->load();
             </form>
         </section>
         <p class="login-txt">Vous n'avez pas de compte ? :</p>
-        <a class="acc-lnk" href="create.acc.php">Créer un compte</a>
+        <a class="acc-lnk" href="create-acc.php">Créer un compte</a>
     </main>
-    <footer class="footer login-footer">
-        <div class="footer__txt">
-            <p>infos contact</p>
-            <p>Suivez notre actualité :</p>
-            <p>
-                <span class="txt__blue">Geo</span><span class="txt__red">Caen</span> tout droits réservés
-            </p>
-        </div>
-        <ul class="footer__icn">
-            <li>
-                <img class="footer__icn-img" src="./assets/img/facebook-square-svgrepo-com.svg" alt="facebook" />
-            </li>
-            <li>
-                <img class="footer__icn-img" src="./assets/img/twitter-svgrepo-com.svg" alt="twitter" />
-            </li>
-            <li>
-                <img class="footer__icn-img" src="./assets/img/instagram-1-svgrepo-com.svg" alt="instagram" />
-            </li>
-        </ul>
-    </footer>
+   <?php  include './includes/_footer.php' ?>
     <script src="./js/burger.js"></script>
     <script src="./js/main.js"></script>
 

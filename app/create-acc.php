@@ -1,46 +1,20 @@
 <?php
-session_start();
 require __DIR__ . '/vendor/autoload.php';
-include 'functions.php';
-include 'account-traitment.php';
 
 use Dotenv\Dotenv;
+
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+session_start();
+require __DIR__ . '/vendor/autoload.php';
+include './includes/_database.php';
+include './includes/_functions.php';
+include './includes/_account-traitment.php';
 
-$firstname = $pseudo = $lastname = $email = $password = $avatar = $description = "";
-$loginErrors = [];
-$registerErrors = [];
-$registerSuccess = false;
+$_SESSION['token'] = generateCSRFToken();
 
-if (!isset($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = generateCSRFToken();
-}
-$csrfToken = $_SESSION['csrf_token'];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-        die("Erreur CSRF détectée.");
-    }
-
-    if (isset($_POST['register_submit'])) {
-        $firstname = $_POST['firstname'] ?? '';
-        $pseudo = $_POST['pseudo'] ?? '';
-        $lastname = $_POST['lastname'] ?? '';
-        $email = $_POST['email'] ?? '';
-        $password = $_POST['password'] ?? '';
-        $description = $_POST['description'] ?? '';
-        $avatar = $_FILES['avatar'] ?? null;
-
-        handleRegistration($firstname, $pseudo, $lastname, $email, $password, $avatar, $description);
-    } elseif (isset($_POST['login_submit'])) {
-        $email = $_POST['email'] ?? '';
-        $password = $_POST['password'] ?? '';
-        handleLogin($email, $password);
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -107,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="success-message">Inscription réussie ! Vous pouvez maintenant vous connecter.</div>
             <?php endif; ?>
             <form action="create-acc.php#register" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
+                <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
                 <div class="form-group">
                     <label for="firstname">Nom:</label>
                     <input type="text" id="firstname" name="firstname" required value="<?php echo htmlspecialchars($firstname); ?>">
@@ -149,26 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </section>
     </main>
-    <footer class="footer">
-        <div class="footer__txt">
-            <p>infos contact</p>
-            <p>Suivez notre actualité :</p>
-            <p>
-                <span class="txt__blue">Geo</span><span class="txt__red">Caen</span> tout droits réservés
-            </p>
-        </div>
-        <ul class="footer__icn">
-            <li>
-                <img class="footer__icn-img" src="./assets/img/facebook-square-svgrepo-com.svg" alt="facebook" />
-            </li>
-            <li>
-                <img class="footer__icn-img" src="./assets/img/twitter-svgrepo-com.svg" alt="twitter" />
-            </li>
-            <li>
-                <img class="footer__icn-img" src="./assets/img/instagram-1-svgrepo-com.svg" alt="instagram" />
-            </li>
-        </ul>
-    </footer>
+    <?php
+    include './includes/_footer.php';
+    preventCSRF();
+    ?>
     <script src="./js/burger.js"></script>
     <script src="./js/main.js"></script>
 
